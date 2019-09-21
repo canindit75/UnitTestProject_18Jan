@@ -1,5 +1,9 @@
 # Visual Studio test platform installer
 - task: VSTest@2
+- task: VisualStudioTestPlatformInstaller@1
+  inputs:
+    packageFeedSelector: 'nugetOrg'
+    versionSelector: 'latestPreRelease'
   inputs:
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
