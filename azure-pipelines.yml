@@ -1,4 +1,12 @@
 # Visual Studio test platform installer
+- task: VSTest@2
+  inputs:
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: |
+      **\*test*.dll
+      !**\*TestAdapter.dll
+      !**\obj\**
+    searchFolder: '$(System.DefaultWorkingDirectory)'
 # Acquire the test platform from nuget.org or the tool cache. Satisfies the ‘vstest’ demand and can be used for running tests and collecting diagnostic data using the Visual Studio Test task.
 - task: VisualStudioTestPlatformInstaller@1
   inputs:
